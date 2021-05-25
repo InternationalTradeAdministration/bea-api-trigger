@@ -4,6 +4,7 @@ import tempfile
 from azure.storage.blob.blockblobservice import BlockBlobService as bbs
 import os, re
 
+#Retreive Azure Account info from environment variables
 conn_str = os.environ["AzureWebJobsStorage"]
 acct_name = re.search('AccountName=(.+?);', conn_str).group(1)
 acct_key = re.search('AccountKey=(.+?);', conn_str).group(1)
